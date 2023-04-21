@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mock</title>
+</head>
+<body>
+   
+        <input type="number" id="prod_ID" placeholder="id">
+        <input type="text" id="prod_name" placeholder="name">
+        <input type="text" id="prod_price" placeholder="price">
+        <button onclick="postData()">Submit</button>
+   <br>
+        <input type="text" id="prod_ID_del" placeholder="id">
+        <button onclick="deleteData()">Delete</button>
+</body>
+</html>
+<script>
+
+    
+    
+    async function postData(){
+        let id = document.getElementById("prod_ID").value;
+    let name = document.getElementById("prod_name").value;
+    let price= document.getElementById("prod_price").value;
+
+    let data_to_send = {
+        id,name,price
+    }
+
+        let res = await fetch("https://mock5-rev-2.onrender.com/products",{
+            method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data_to_send)
+        })
+        let data = await res.json();
+        console.log(data)
+    }
+
+    async function deleteData(){
+        let name = document.getElementById("prod_ID_del").value;
+    
+
+    let data_to_send = {
+        name
+    }
+
+        let res = await fetch(`https://mock5-rev-2.onrender.com/products/${name}`,{
+            method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(data_to_send)
+        })
+        let data = await res.json();
+        console.log(data)
+    }
+</script>
