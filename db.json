@@ -60,5 +60,12 @@
       "age": 20,
       "email": "cnorssister9@mayoclinic.com"
     }
+  ],
+  "products":[
+    {
+      "name":"washing machine",
+      "category":"electronic",
+      "price":"10000"
+    }
   ]
 }
