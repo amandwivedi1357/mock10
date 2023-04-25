@@ -42,21 +42,23 @@
     }
 
     async function deleteData(){
-        let name = document.getElementById("prod_ID_del").value;
+        let category = document.getElementById("prod_ID_del").value;
     
 
     let data_to_send = {
-        name
+        category
     }
 
-        let res = await fetch(`https://mock5-rev-2.onrender.com/products/${name}`,{
+        let res = await fetch(`https://mock5-rev-2.onrender.com/products/${category}`,{
             method: 'DELETE',
     headers: {
       'Content-Type': 'application/json'
     },
-    body: JSON.stringify(data_to_send)
+    
         })
         let data = await res.json();
         console.log(data)
     }
+
+
 </script>
