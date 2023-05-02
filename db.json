@@ -45,5 +45,15 @@
       "Description": "Tata Altroz with all original documents",
       "Price": 500000
     }
+  ],
+  "products":[
+    {
+      "id":1,
+      "Image":"url",
+      "description":"amanamanamanam",
+      "gender":"Male",
+      "category":"Shirts",
+      "price":4500
+    }
   ]
 }
